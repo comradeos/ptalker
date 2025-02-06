@@ -1,17 +1,21 @@
-let favorites = [];
+const audioMap = {};
 
 $(document).ready(function() {
-    handle('да');
-    handle('нет');
-
-    handle('привет');
-    handle('больно');
-    handle('не_больно');
-});
-
-function handle(id) {
+  const sounds = [
+    'да', 'нет', 'привет', 'больно', 'не_больно', 'горячо', 'воды',
+    'кушать', 'лучше', 'наелся', 'не_нужно', 'не_уверен', 'не_удобно',
+    'очень_больно', 'пить', 'сок', 'терпимо', 'томатный_сок', 'хватит',
+    'холодно', 'хуже'
+  ];
+  
+  sounds.forEach(id => {
+    audioMap[id] = new Audio(`sounds/${id}.mp3`);
+  });
+  
+  sounds.forEach(id => {
     $(`#${id}`).on('click', function() {
-        const audio = new Audio(`sounds/${id}.mp3`);
-        audio.play();
+      audioMap[id].currentTime = 0;
+      audioMap[id].play();
     });
-}
+  });
+});
