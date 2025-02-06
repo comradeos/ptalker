@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.yesNo {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.yesNo div {
+    background-color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+}
+
+.yesNo #да {
+    background-color: #006700;
+    color: white;
+}
+
+.yesNo #нет {
+    background-color: #950000;
+    color: white;
+}
+
+.yesNo div:hover {
+    cursor: pointer;
+}
+
+.yesNo div:active {
+    transform: scale(0.95);
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 70px;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.item:active {
+    transform: scale(0.95);
+}
+
