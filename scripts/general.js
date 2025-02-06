@@ -1,21 +1,30 @@
-const audioMap = {};
-
 $(document).ready(function() {
-  const sounds = [
-    'да', 'нет', 'привет', 'больно', 'не_больно', 'горячо', 'воды',
-    'кушать', 'лучше', 'наелся', 'не_нужно', 'не_уверен', 'не_удобно',
-    'очень_больно', 'пить', 'сок', 'терпимо', 'томатный_сок', 'хватит',
-    'холодно', 'хуже'
-  ];
-  
-  sounds.forEach(id => {
-    audioMap[id] = new Audio(`sounds/${id}.mp3`);
-  });
-  
-  sounds.forEach(id => {
-    $(`#${id}`).on('click', function() {
-      audioMap[id].currentTime = 0;
-      audioMap[id].play();
-    });
-  });
+    handle('да');
+    handle('нет');
+    handle('привет');
+    handle('больно');
+    handle('не_больно');
+    handle('горячо');
+    handle('воды');
+    handle('кушать');
+    handle('лучше');
+    handle('наелся');
+    handle('не_нужно');
+    handle('не_уверен');
+    handle('не_удобно');
+    handle('очень_больно');
+    handle('пить');
+    handle('сок');
+    handle('терпимо');
+    handle('томатный_сок');
+    handle('хватит');
+    handle('холодно');
+    handle('хуже');
 });
+
+function handle(id) {
+    $(`#${id}`).on('click', function() {
+        const audio = new Audio(`sounds/${id}.mp3`);
+        audio.play();
+    });
+}
