@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer 10+ */
+    user-select: none;         /* Стандартное свойство */
 }
 
 body {
