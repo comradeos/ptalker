@@ -1,25 +1,19 @@
-$(document).ready(function() {
-    const sounds = [
-        'да', 'нет', 'привет',
-        'больно', 'не_больно', 'горячо',
-        'воды', 'кушать', 'лучше',
-        'наелся', 'не_нужно', 'не_уверен',
-        'не_удобно', 'очень_больно', 'пить',
-        'сок', 'терпимо', 'томатный_сок',
-        'хватит', 'холодно', 'хуже'
-    ];
-
+$(document).ready(function () {
     const audioMap = {};
 
-    sounds.forEach(id => {
-        const audio = new Audio(`sounds/${id}.mp3`);
-        audioMap[id] = audio;
+    $(".item, .yesNo div").each(function () {
+        const id = $(this).attr("id");
+        if (id) {
+            const audio = new Audio(`sounds/${id}.mp3`);
+            audioMap[id] = audio;
+        }
     });
 
-    sounds.forEach(id => {
-        $(`#${id}`).on('click', function() {
+    $(".item, .yesNo div").on("click", function () {
+        const id = $(this).attr("id");
+        if (audioMap[id]) {
             audioMap[id].currentTime = 0;
             audioMap[id].play();
-        });
+        }
     });
 });
