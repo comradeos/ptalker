@@ -18,7 +18,7 @@ body {
 .yesNo {
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
     width: 100%;
     bottom: 0;
     background: white;
@@ -26,11 +26,12 @@ body {
 
 .yesNo div {
     background-color: white;
-    height: 70px;
+    height: 170px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 49%;
+    text-transform: uppercase;
 }
 
 .yesNo #да {
@@ -55,7 +56,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 70px;
+    height: 230px;
     align-items: center;
     margin-bottom: 20px;
     background-color: white;
@@ -73,3 +74,23 @@ body {
     height: calc(100% - 70px);
 }
 
+.item.img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#туалет {
+    background-image: url("../images/туалет.svg");
+    background-size: 100px;
+}
+
+#телевизор {
+    background-image: url("../images/телевизор.svg");
+    background-size: 200px;
+}
+
+#кушать {
+    background-image: url("../images/кушать.svg");
+    background-size: 240px;
+}
